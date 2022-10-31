@@ -1,8 +1,8 @@
 const Discord = require("discord.js")
 const mongoose = require("mongoose")
-const puertas = require("../DB/Modelos/puertas")
-const create =require("../DB/Modelos/data_ussers");
-require("../DB/db.js")
+const puertas = require("../db/Modelos/puertas")
+const create =require("../db/Modelos/data_ussers");
+require("../db/db.js")
 
 
 function setData() {

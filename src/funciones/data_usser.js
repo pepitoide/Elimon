@@ -1,5 +1,5 @@
 const mongoose= require("mongoose");
-const data_usser = require("../DB/Modelos/data_ussers")
+const data_usser = require("../db/Modelos/data_ussers")
 const puertas = require("./puertas")
 const setDate = require("./set_date")
 const embed = require("./embed");

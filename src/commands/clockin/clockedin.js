@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const puertas = require("../../funciones/puertas")
 const create =require("../../funciones/data_usser.js");
 const embed = require("../../funciones/embed")
-require("../../DB/db.js")
+require("../../db/db.js")
 
 module.exports = {
     name: "clockedin",

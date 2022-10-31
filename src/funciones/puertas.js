@@ -1,7 +1,7 @@
 const mongoose= require("mongoose");
-const puertas = require("../DB/Modelos/puertas")
+const puertas = require("../db/Modelos/puertas")
 const embed = require("./embed")
-require("../DB/db.js")
+require("../db/db.js")
 
 async function buscar(user_id, server_id) {
     const busqueda = await puertas.findOne({user_id: `${user_id}`,server_id: `${server_id}`})

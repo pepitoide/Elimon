@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const puertas = require("../../funciones/puertas")
 const data_usser = require("../../funciones/data_usser")
 const embed = require("../../funciones/embed")
-require("../../DB/db.js")
+require("../../db/db.js")
 
 
 module.exports = {
