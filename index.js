@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const defense = require("./src/funciones/defense")
 const embed = require("./src/funciones/embed")
 const btns = require("./src/funciones/btns")
 const music_func = require("./src/funciones/music")
@@ -9,6 +10,7 @@ const { DisTube } = require("distube")
 const { SpotifyPlugin } = require('@distube/spotify')
 const { SoundCloudPlugin } = require('@distube/soundcloud')
 const { YtDlpPlugin } = require('@distube/yt-dlp');
+const { channel } = require("diagnostics_channel");
 require("dotenv").config();
 
 const prefix = config.prefijo;
@@ -74,6 +76,7 @@ client.on("guildMemberRemove", (member) => {
 
 
 client.on('messageCreate', async (message) => {
+    //defense.defense(client, message)
     if (message.channel.type === 1 || message.channel.type === 3) return;
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
@@ -81,7 +84,7 @@ client.on('messageCreate', async (message) => {
     const comando = args.shift().toLocaleLowerCase();
     try {
         let cmd = client.commands.find(e => e.name === comando || e.alias.includes(comando))
-        if (!cmd) return (message.channel.send({ embeds: [embed.comand_warning] }))
+        if (!cmd) return message.channel.send({ embeds: [embed.comand_warning] });
         if (cmd) { cmd.execute(client, message, args, comando) }
     } catch (error) {
         console.log("error include cmd")

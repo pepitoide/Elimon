@@ -34,29 +34,30 @@ module.exports = {
                 }
 
             } else if (args[1] && args[1].toLocaleLowerCase() === "off") {
-                if (reqdb.guild.logs.activate === false) return (message.channel.send({ embeds: [embed.embed_elimon(txt = "**Los logs ya estan desactivados**")] }))
+                if (reqdb.guild.logs.activate === false) return (message.channel.send({ embeds: [embed.embed_elimon(op = 1, val1= "**Los logs ya estan desactivados**")] }))
                 server_config.update_server_config_logs(server_id, channelSet = false, type = 1, active = false).then(e => {
                     if (e) {
-                        message.channel.send({ embeds: [embed.embed_elimon(txt = "**Se ha deshabilitado la opcion de logs**")] })
+                        message.channel.send({ embeds: [embed.embed_elimon(op=1, val1 = "**Se ha deshabilitado la opcion de logs**")] })
                     }
                 })
             } else return (message.channel.send({ embeds: [embed.embed_red(txt = "**Como tercer parametro debes poner on o off \n ejem: [+set logs ON #canal]**")] }))
 
         } else if (args[0].toLocaleLowerCase() === "music") {
+            
             if (args[1] && args[1].toLocaleLowerCase() === "on") {
-                if (reqdb.guild.music.activate) return (message.channel.send({ embeds: [embed.embed_elimon(txt = "**La musica ya esta activada**")] }))
+                if (reqdb.guild.music.activate) return (message.channel.send({ embeds: [embed.embed_elimon(op = 1, val1 = "**La musica ya esta activada**")] }))
 
                 server_config.update_server_config_logs(server_id = message.guild.id, channelSet = false, type = 2, active = true).then(e => {
                     if (e) {
-                        message.channel.send({ embeds: [embed.embed_elimon(txt = "**Se ha configurado la opcion de musica**")] })
+                        message.channel.send({ embeds: [embed.embed_elimon(op = 1, txt = "**Se ha configurado la opcion de musica**")] })
                     }
                 })
 
             } else if (args[1] && args[1].toLocaleLowerCase() === "off") {
-                if (reqdb.guild.logs.activate === false) return (message.channel.send({ embeds: [embed.embed_elimon(txt = "**La musica ya esta desactivada**")] }))
+                if (reqdb.guild.logs.activate === false) return (message.channel.send({ embeds: [embed.embed_elimon(op=1,val1 = "**La musica ya esta desactivada**")] }))
                 server_config.update_server_config_logs(server_id, channelSet = false, type = 2, active = false).then(e => {
                     if (e) {
-                        message.channel.send({ embeds: [embed.embed_elimon(txt = "**La musica ha sido desactivada**")] })
+                        message.channel.send({ embeds: [embed.embed_elimon(op = 1, val1 = "**La musica ha sido desactivada**")] })
                     }
                 })
             } else return (message.channel.send({ embeds: [embed.embed_red(txt = "**Como tercer parametro debes poner on o off \n ejem: [+set logs ON #canal]**")] }))
