@@ -46,7 +46,7 @@ for (let file of fileSlashCommands) {
 //eventos discord
 
 
-client.on("ready", () => {
+client.on("ready", e => {
 
     console.log(`Bot ON! conectado en: ${client.guilds.cache.size} servidores y ${client.users.cache.size} usuarios.`);
     client.user.setPresence({ activities: [{ name: `Escuchando tus Commands [+help]` }] });
